@@ -1,0 +1,17 @@
+panaReporter.controller('loginCtrl',function($scope,$http,$location,$rootScope,userFactory){
+        $scope.login=function(user){
+            $http.post('/signin',user)
+                .success(function(data){
+                    if(!data){
+                        $location.path('/login')
+                    }
+                    userFactory.setUser(data);
+                    console.log(data);
+                $location.path('/dashboard')
+            })
+                .error(function(data){
+                    alert(data);
+                    console.log(data);
+                })
+        }
+    });

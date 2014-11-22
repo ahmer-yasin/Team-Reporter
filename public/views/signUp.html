@@ -1,0 +1,32 @@
+<div class="panel panel-danger" >
+    <div class="panel-heading">
+        <div class="panel-title">SignUp</div>
+
+    </div>
+
+    <div style="padding-top:30px" class="panel-body" >
+
+        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+        <form id="loginform" class="form-horizontal" role="form">
+
+            <div style="margin-bottom: 25px" class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input type="text" class="form-control" name="username" ng-model="user.name" placeholder="Name">
+            </div>
+            <div style="margin-bottom: 25px" class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input type="text" class="form-control" name="userEmail" ng-model="user.email" placeholder="email">
+            </div>
+            <div style="margin-bottom: 25px" class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input type="password" class="form-control" name="password" ng-model="user.password" placeholder="password">
+            </div>
+            <div style="margin-top:10px" class="form-group">
+                <div class="col-sm-12 controls">
+                    <a class="btn btn-success" ng-disabled="!user.name|| !user.email || !user.password" ng-click="signUp(user)">Sign Up</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

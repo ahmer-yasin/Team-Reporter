@@ -1,0 +1,13 @@
+panaReporter.controller('signUpCtrl',function($scope,$http,$location,$rootScope){
+        $scope.signUp=function(user){
+            $http.post('/signup',user)
+                .success(function(data){
+                $rootScope.user=data;
+                $location.url('/dashboard')
+            })
+                .error(function(data){
+                    alert(data);
+                    console.log(data);
+                })
+        }
+    });
